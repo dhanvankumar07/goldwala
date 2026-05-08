@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoldWallah— Sell Your Gold at the Best Price</title>
+  <meta name="description"
+    content="GoldWallah is India's first AI-powered gold selling marketplace where verified jewellers bid for your old gold in real-time." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-coin">
+        <span class="loader-symbol">
+          <img src="" alt="">
+        </span>
+      </div>
+      <div class="loader-text">GOLDWALLAH</div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Gold<strong>Wallah</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#sell" class="nav-link">Sell Gold</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <!-- Dark mode toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">☽</span>
+        </button>
+        <a href="#sell" class="btn btn-primary btn-sm">Sell Gold</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge reveal" data-delay="0">
+        <span class="badge-dot"></span>
+        Live Gold Rate: ₹<span id="heroLiveRate">6,842</span>/g
+      </div>
+      <h1 class="hero-title reveal" data-delay="100">
+        Sell Your Old Gold<br />
+        <em>at the Best Price.</em>
+      </h1>
+      <p class="hero-sub reveal" data-delay="200">
+        India's first real-time gold bidding marketplace — verified jewellers compete for your gold, so you always win.
+      </p>
+      <div class="hero-cta reveal" data-delay="300">
+        <a href="#sell" class="btn btn-gold btn-lg">
+          <span>Sell Now</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#calculator" class="btn btn-outline btn-lg">View Prices</a>
+      </div>
+      <div class="hero-stats reveal" data-delay="400">
+        <div class="stat">
+          <span class="stat-value">₹48Cr+</span>
+          <span class="stat-label">Gold Sold</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">12,400+</span>
+          <span class="stat-label">Happy Sellers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">3,200+</span>
+          <span class="stat-label">Verified Jewellers</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== LIVE GOLD RATE + CALCULATOR ========== -->
+  <section id="calculator" class="section section-calc">
+    <div class="container">
+      <div class="calc-grid">
+
+        <!-- Live Rate Panel -->
+        <div class="rate-panel reveal">
+          <div class="panel-label">Live Market Rate</div>
+          <div class="rate-display">
+            <span class="rate-currency">₹</span>
+            <span class="rate-value" id="liveRate">6,842</span>
+            <span class="rate-unit">/gram</span>
+          </div>
+          <div class="rate-change positive" id="rateChange">
+            <span>▲</span> +₹38 today
+          </div>
+          <div class="rate-meta">24K · MCX Spot · Updated <span id="rateTime">just now</span></div>
+          <p class="rate-description">Live gold price displayed in real-time with instantly updated 24K, 22K and 18K values.</p>
+          <div class="rate-carats">
+            <div class="carat-badge" data-carat="24">
+              <span>24K</span>
+              <strong>₹<span class="carat-price" id="price24">6,842</span></strong>
+            </div>
+            <div class="carat-badge" data-carat="22">
+              <span>22K</span>
+              <strong>₹<span class="carat-price" id="price22">6,272</span></strong>
+            </div>
+            <div class="carat-badge" data-carat="18">
+              <span>18K</span>
+              <strong>₹<span class="carat-price" id="price18">5,131</span></strong>
+            </div>
+          </div>
+          <div class="rate-ticker" id="rateTicker">
+            <div class="ticker-track" id="tickerTrack"></div>
+          </div>
+        </div>
+
+        <!-- Calculator Panel -->
+        <div class="calc-panel reveal" data-delay="100">
+          <div class="panel-label">Payout Calculator</div>
+          <h3 class="calc-title">Estimate Your Earnings</h3>
+          <p class="calc-desc">Enter your gold's weight and purity to see your estimated payout after platform fee.</p>
+
+          <div class="calc-form">
+            <div class="input-group">
+              <label for="goldWeight">Weight (grams)</label>
+              <div class="input-wrap">
+                <input type="number" id="goldWeight" placeholder="e.g. 10" min="0.1" step="0.1" />
+                <span class="input-unit">g</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="goldCarat">Purity (Carat)</label>
+              <div class="input-wrap select-wrap">
+                <select id="goldCarat">
+                  <option value="24">24 Karat (99.9%)</option>
+                  <option value="22" selected>22 Karat (91.6%)</option>
+                  <option value="18">18 Karat (75%)</option>
+                  <option value="14">14 Karat (58.5%)</option>
+                </select>
+                <span class="select-arrow">▾</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-breakdown" id="calcBreakdown">
+            <div class="breakdown-row">
+              <span>Market Value</span>
+              <span id="marketValue">—</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Platform Fee (6%)</span>
+              <span id="platformFee" class="fee">—</span>
+            </div>
+            <div class="breakdown-divider"></div>
+            <div class="breakdown-row total">
+              <span>Estimated Payout</span>
+              <span id="estimatedPayout">—</span>
+            </div>
+          </div>
+
+          <button class="btn btn-gold btn-full" id="calcBtn">Calculate Payout</button>
+          <p class="calc-note">* Actual payout depends on jeweller bids. This is an estimate.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="section section-steps">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Process</div>
+        <h2 class="section-title">Sell in 4 Simple Steps</h2>
+        <p class="section-sub">From listing to payment — the entire process takes less than 24 hours.</p>
+      </div>
+      <div class="steps-container">
+        <div class="step reveal" data-delay="0">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap">
+            <svg class="step-icon" viewBox="0 0 48 48" fill="none">
+              <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="2" />
+              <path d="M16 18h16M16 24h16M16 30h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <circle cx="36" cy="36" r="8" fill="var(--gold)" stroke="none" />
+              <path d="M33 36l2 2 4-3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="step-title">Upload Gold Details</h3>
+          <p class="step-desc">Submit photos, weight, and purity details through our secure portal. KYC in minutes.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step reveal" data-delay="100">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap">
+            <svg class="step-icon" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" />
+              <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <circle cx="24" cy="24" r="5" fill="var(--gold)" />
+              <path d="M18 14l3 3M30 31l3 3M14 30l3-3M31 17l3-3" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="step-title">Receive Jeweller Bids</h3>
+          <p class="step-desc">Verified jewellers in your area place competitive bids within 2 hours. No negotiation
+            needed.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step reveal" data-delay="200">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap">
+            <svg class="step-icon" viewBox="0 0 48 48" fill="none">
+              <path d="M12 26l8 8 16-18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+          <h3 class="step-title">Accept Best Offer</h3>
+          <p class="step-desc">Compare all bids side-by-side. Accept the highest one — or wait for more bids to roll in.
+          </p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step reveal" data-delay="300">
+          <div class="step-number">04</div>
+          <div class="step-icon-wrap">
+            <svg class="step-icon" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="14" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2" />
+              <path d="M6 22h36" stroke="currentColor" stroke-width="2" />
+              <rect x="12" y="28" width="8" height="4" rx="1" fill="var(--gold)" />
+              <circle cx="38" cy="12" r="6" fill="var(--gold)" stroke="none" />
+              <path d="M36 12l1.5 1.5 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="step-title">Get Paid Instantly</h3>
+          <p class="step-desc">Funds transferred directly to your bank account within 2 hours of gold handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section id="sell" class="section section-features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Why GoldBazaar</div>
+        <h2 class="section-title">Built for Trust & Transparency</h2>
+        <p class="section-sub">Every feature is designed to protect you and maximize your earnings.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal" data-delay="0">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 4L6 10v10c0 9 6.2 17.4 14 20 7.8-2.6 14-11 14-20V10L20 4z" stroke="currentColor"
+                stroke-width="1.8" />
+              <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h4 class="feature-title">Secure KYC Verification</h4>
+          <p class="feature-desc">Government ID–backed verification for all buyers and sellers. Zero fraudulent
+            transactions since launch.</p>
+        </div>
+        <div class="feature-card reveal" data-delay="80">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.8" />
+              <path d="M20 12v8l5 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="20" cy="20" r="2" fill="var(--gold)" />
+            </svg>
+          </div>
+          <h4 class="feature-title">Real-Time Bidding</h4>
+          <p class="feature-desc">Watch bids come in live. Get notified instantly when a new bid beats your current best
+            offer.</p>
+        </div>
+        <div class="feature-card reveal" data-delay="160">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="16" r="6" stroke="currentColor" stroke-width="1.8" />
+              <path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" />
+              <circle cx="32" cy="14" r="4" stroke="currentColor" stroke-width="1.5" />
+              <path d="M36 26c0-4.4-3.6-4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h4 class="feature-title">Location-Based Matching</h4>
+          <p class="feature-desc">Only nearby, verified jewellers get access to your listing — faster pickup, better
+            trust.</p>
+        </div>
+        <div class="feature-card reveal" data-delay="240">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="10" width="28" height="20" rx="2" stroke="currentColor" stroke-width="1.8" />
+              <path d="M6 16h28" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="12" cy="24" r="2" fill="var(--gold)" />
+              <path d="M18 24h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h4 class="feature-title">Transparent Pricing</h4>
+          <p class="feature-desc">See exactly how your payout is calculated. No hidden charges, no last-minute
+            deductions.</p>
+        </div>
+        <div class="feature-card reveal" data-delay="320">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M10 28l6-8 5 5 4-6 5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <rect x="6" y="8" width="28" height="24" rx="2" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+          </div>
+          <h4 class="feature-title">Best Price Guarantee</h4>
+          <p class="feature-desc">Our competitive bidding system ensures you always get a rate that's 3–8% above street
+            value.</p>
+        </div>
+        <div class="feature-card reveal" data-delay="400">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 6l3.5 7 7.5 1.1-5.5 5.4 1.3 7.5L20 24l-6.8 3.5 1.3-7.5L9 14.6l7.5-1.1z" stroke="currentColor"
+                stroke-width="1.8" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h4 class="feature-title">5-Star Rated Service</h4>
+          <p class="feature-desc">Dedicated support team resolves any issue within 2 hours. Available 7 days a week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== JEWELLER (B2B) SECTION ========== -->
+  <section id="about" class="section section-jeweller">
+    <div class="container">
+      <div class="jeweller-grid">
+        <div class="jeweller-visual reveal">
+          <div class="jeweller-card-stack">
+            <div class="j-card j-card-back">
+              <div class="j-card-label">Active Bid</div>
+              <div class="j-card-value">₹6,710/g</div>
+              <div class="j-card-name">Shree Ram Jewellers, Jaipur</div>
+            </div>
+            <div class="j-card j-card-mid">
+              <div class="j-card-label">Active Bid</div>
+              <div class="j-card-value">₹6,780/g</div>
+              <div class="j-card-name">Mehta Gold House, Delhi</div>
+            </div>
+            <div class="j-card j-card-front">
+              <div class="j-card-badge">Highest Bid 🏆</div>
+              <div class="j-card-label">Active Bid</div>
+              <div class="j-card-value gold">₹6,820/g</div>
+              <div class="j-card-name">KK Jewellers, Mumbai</div>
+              <div class="j-card-meta">
+                <span class="verified-dot">✓ Verified</span>
+                <span>2.1 km away</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jeweller-content reveal" data-delay="100">
+          <div class="section-eyebrow">For Jewellers</div>
+          <h2 class="section-title">Are You a Jeweller?</h2>
+          <p class="jeweller-desc">Join India's largest network of verified gold buyers. Access a steady stream of
+            verified gold listings in your city — no middlemen, no overhead.</p>
+          <ul class="jeweller-benefits">
+            <li>
+              <span class="benefit-icon">⬡</span>
+              <div>
+                <strong>Verified Inventory</strong>
+                <span>Every listing is KYC-backed and quality-checked before it reaches you.</span>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-icon">⬡</span>
+              <div>
+                <strong>Location-Filtered Listings</strong>
+                <span>Only see gold available in your city or radius. No irrelevant leads.</span>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-icon">⬡</span>
+              <div>
+                <strong>Zero Commission on Winning Bids</strong>
+                <span>Pay only a small monthly subscription. No cut on what you win.</span>
+              </div>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-gold btn-lg">
+            <span>Register as Buyer</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section section-testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Testimonials</div>
+        <h2 class="section-title">Trusted by Thousands</h2>
+      </div>
+      <div class="trust-badges reveal" data-delay="50">
+        <div class="trust-badge">🔒 256-bit SSL</div>
+        <div class="trust-badge">✓ RBI Compliant</div>
+        <div class="trust-badge">⭐ 4.9/5 Rating</div>
+        <div class="trust-badge">🏛 ISO 27001</div>
+        <div class="trust-badge">📱 12K+ Downloads</div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" data-delay="0">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"I got ₹4,200 more than what the local jeweller offered me. The bidding process was
+            transparent and the money came in 90 minutes."</p>
+          <div class="t-author">
+            <div class="t-avatar">P</div>
+            <div>
+              <strong>Priya Mehta</strong>
+              <span>Mumbai, Maharashtra</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" data-delay="100">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Sold my old jewellery for a wedding expense. GoldBazaar made it so easy — uploaded photos,
+            got 6 bids, accepted the best one. Done."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background: #8B5E3C;">R</div>
+            <div>
+              <strong>Rajesh Kumar</strong>
+              <span>Jaipur, Rajasthan</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" data-delay="200">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"As a jeweller, GoldBazaar has been a game changer. I source gold directly from verified
+            sellers in Pune — no brokers, just clean business."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background: #2C5F2E;">A</div>
+            <div>
+              <strong>Amit Singhania</strong>
+              <span>Jeweller, Pune</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="section section-faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-header reveal">
+          <div class="section-eyebrow">FAQ</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-sub">Can't find an answer? <a href="#contact" class="faq-contact-link">Talk to us</a>.</p>
+        </div>
+        <div class="faq-list" id="faqList">
+          <div class="faq-item reveal" data-delay="0">
+            <button class="faq-question" aria-expanded="false">
+              <span>How is the gold price determined on GoldBazaar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use real-time MCX (Multi Commodity Exchange) spot rates as the base price. Each jeweller then bids
+                above or around this rate based on their demand and inventory needs. You always see the live market rate
+                and all bids transparently.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-delay="60">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is the 6% platform fee?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The 6% platform fee covers our technology infrastructure, KYC verification, secure payment processing,
+                and customer support. It is deducted from the winning bid amount before disbursement to your bank
+                account. There are no other hidden charges.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-delay="120">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I know my gold won't be swapped or stolen?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Every jeweller on our platform is physically verified with store visits and GST/trade license checks.
+                Pickup is done via our insured logistics partners with live GPS tracking. Your gold is fully insured
+                during transit and inspection.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-delay="180">
+            <button class="faq-question" aria-expanded="false">
+              <span>How quickly will I get paid?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Once you accept a bid and the jeweller completes the pickup and verification (usually same-day), funds
+                are transferred via IMPS/NEFT to your registered bank account within 2 hours. You'll get a real-time SMS
+                and email confirmation.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-delay="240">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I sell broken or melted gold jewellery?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Broken jewellery, gold coins, bars, and even dental gold are all accepted. The purity is verified
+                at the time of pickup using a certified XRF analyser. You get a digital purity certificate after every
+                transaction.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-delay="300">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is GoldBazaar available outside India?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, GoldBazaar operates in 42 cities across India. We are expanding to the UAE and Singapore in
+                Q3 2025. International NRI transactions are planned for Q4 2025.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT / CTA ========== -->
+  <section id="contact" class="section section-contact">
+    <div class="container">
+      <div class="contact-cta reveal">
+        <div class="contact-cta-bg"></div>
+        <div class="section-eyebrow light">Get Started</div>
+        <h2 class="contact-title">Ready to Sell Your Gold?</h2>
+        <p class="contact-sub">Join 12,000+ sellers who have already earned more with GoldBazaar.</p>
+        <div class="contact-actions">
+          <a href="tel:+911800123456" class="btn btn-gold btn-lg">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.4 2L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012-.5c.9.3 1.9.6 2.9.7A2 2 0 0122 16.9z" />
+            </svg>
+            1800-123-4567 (Toll Free)
+          </a>
+          <a href="mailto:hello@goldbazaar.in" class="btn btn-outline-light btn-lg">hello@goldbazaar.in</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">Gold<strong>Bazaar</strong></span>
+          </a>
+          <p class="footer-tagline">India's most trusted gold selling marketplace. Connecting sellers with verified
+            jewellers since 2022.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.41 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.97A29 29 0 0023 11.75a29 29 0 00-.46-5.33zM9.75 15.02v-6.5l5.75 3.25-5.75 3.25z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 class="footer-heading">Company</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Careers <span class="footer-badge">Hiring</span></a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 class="footer-heading">Platform</h5>
+          <ul class="footer-links">
+            <li><a href="#sell">Sell Gold</a></li>
+            <li><a href="#about">For Jewellers</a></li>
+            <li><a href="#calculator">Gold Calculator</a></li>
+            <li><a href="#">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 class="footer-heading">Legal</h5>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">KYC Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 GoldBazaar Technologies Pvt. Ltd. · All rights reserved.</p>
+        <p class="footer-disclaimer">Gold prices are indicative. Actual payouts depend on jeweller bids.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
