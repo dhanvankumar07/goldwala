@@ -105,7 +105,7 @@ const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
 // Persist preference
-const savedTheme = localStorage.getItem('gb-theme') || 'light';
+const savedTheme = localStorage.getItem('gb-theme') || 'dark';
 html.setAttribute('data-theme', savedTheme);
 
 themeToggle.addEventListener('click', () => {
