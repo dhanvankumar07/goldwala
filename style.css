@@ -610,22 +610,28 @@ textarea {
 }
 
 .hero-badge {
-  
+  position: absolute;
+  top: 16px;
+  right: 24px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 16px;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 100px;
   font-size: 13px;
   font-weight: 500;
-  
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 2;
 }
 
 [data-theme="dark"] .hero-badge {
-  background: rgba(201, 168, 76, 0.08);
+  background: rgba(201, 168, 76, 0.12);
   color: var(--gold-light);
+  border-color: rgba(212, 170, 85, 0.25);
 }
 
 .badge-dot {
@@ -2038,5 +2044,55 @@ textarea {
 
   .hero-stats {
     gap: 12px;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-container {
+    padding: 0 18px;
+  }
+
+  .hero-badge {
+    right: 18px;
+    top: 18px;
+    justify-content: center;
+    width: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding-top: 32px;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-badge {
+    right: 14px;
+    top: 14px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-links {
+    padding: 20px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    width: 100%;
   }
 }
